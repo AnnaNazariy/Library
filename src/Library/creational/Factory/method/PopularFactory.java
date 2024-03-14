@@ -2,9 +2,8 @@ package Library.creational.Factory.method;
 
 import Library.creational.Factory.*;
 import Library.creational.Factory.BookTypeFactory;
-import Library.creational.Factory.NOVEL;
-import Library.creational.Factory.ROMANCE;
-import Library.creational.Factory.FANTASY;
+import Library.creational.Factory.BookType;
+import Library.creational.Factory.Collection;
 
 public class PopularFactory extends BookTypeFactory {
     @Override
@@ -14,10 +13,10 @@ public class PopularFactory extends BookTypeFactory {
                 return new NOVEL();
             case ROMANCE:
                 return new ROMANCE();
-            case FANTASY:
+             case FANTASY:
                 return new FANTASY();
             default:
-                return null;
+                throw new IllegalArgumentException("Unsupported book type: " + bookType);
         }
     }
 }
