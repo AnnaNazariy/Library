@@ -16,7 +16,7 @@ public class PopularFactory extends BookTypeFactory {
              case FANTASY:
                 return new FANTASY();
             default:
-                throw new IllegalArgumentException("Unsupported book type: " + bookType);
+                return null;
         }
     }
 }

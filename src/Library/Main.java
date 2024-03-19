@@ -22,7 +22,7 @@ public class Main {
         System.out.println("Singleton:");
         System.out.println("Library 1 location: " + library.getLocation());
         System.out.println("Library 2 location: " + library2.getLocation());
-        library2.setLocation("вул. Головна, 12");
+        library2.setLocation("вул. Буковинська, 12");
         System.out.println("Library 1 location after changing: " + library.getLocation());
         System.out.println("Library 2 location after changing: " + library2.getLocation());
         System.out.println("Are they the same instance? " + (library == library2));
@@ -31,11 +31,13 @@ public class Main {
         // Factory Method
         System.out.println("Factory Method:");
         PopularFactory popularFactory = new PopularFactory();
+        Collection novel = popularFactory.createBook(BookType.NOVEL);
+        Collection romance = popularFactory.createBook(BookType.ROMANCE);
+        Collection fantasy = popularFactory.createBook(BookType.FANTASY);
         List<Collection> books = new ArrayList<>();
-        for (BookType bookType : BookType.values()) {
-            Collection book = popularFactory.createBook(bookType);
-            books.add(book);
-        }
+        books.add(novel);
+        books.add(romance);
+        books.add(fantasy);
         books.forEach(book -> {
             book.giveItem();
             book.returnItem();

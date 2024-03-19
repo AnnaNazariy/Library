@@ -6,5 +6,5 @@ public enum BookType {
     BIOGRAPHY,
     HISTORY,
     SELF_HELP,
-}
 
+}

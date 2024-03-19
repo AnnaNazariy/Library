@@ -1,6 +1,5 @@
 package Library.creational.Factory.abst;
 
-import Library.creational.Factory.*;
 import Library.creational.Factory.BookType;
 import Library.creational.Factory.BookTypeFactory;
 import Library.creational.Factory.Collection;
