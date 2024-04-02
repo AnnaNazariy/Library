@@ -27,9 +27,8 @@ import Library.structural.facade.ReturnBook;
 import Library.structural.facade.TakeOrder;
 import Library.structural.flyweight.Flyweight;
 import Library.structural.flyweight.FlyweightFactory;
-import Library.structural.proxy.LibraryOrderProxy;
-import Library.structural.proxy.OnlineLibraryOrder;
-
+import Library.structural.proxy.BookProxy;
+import Library.structural.proxy.АncientВooks;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -144,12 +143,14 @@ public class Main {
         System.out.println("_____________________________________________________________");
 
         //Proxy
-       /* System.out.println("Proxy");
-        LibraryOrderProxy libraryOrderProxy = new LibraryOrderProxy();
-        OnlineLibraryOrder onlineLibraryOrder = new OnlineLibraryOrder();
-        onlineLibraryOrder.makeOrder();
-        libraryOrderProxy.makeOrder();
-        System.out.println("___________________________________________________");*/
+        System.out.println("Proxy");
+        АncientВooks bookProxy1 = new BookProxy(1);
+        bookProxy1.read();
+        // Створення проксі для користувача з id = 3
+        АncientВooks bookProxy2 = new BookProxy(3);
+        bookProxy2.read();
+        System.out.println("___________________________________________________");
+
 
         //Composite
         System.out.println("Composite");
@@ -165,7 +166,6 @@ public class Main {
 
         //Bridge
         System.out.println("Bridge");
-                System.out.println(" >> Bridge start");
                 System.out.println("Borrowing a book:");
                 var bookService = new BookService();
                 var book = new Books("The Great Gatsby", "F. Scott Fitzgerald", bookService);
