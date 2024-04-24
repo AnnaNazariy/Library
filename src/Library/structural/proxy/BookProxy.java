@@ -10,9 +10,9 @@ public class BookProxy implements АncientВooks {
     }
 
     @Override
-    public void read() {
+    public void read(int bookId) {
         if (hasAccess()) {
-            System.out.println("Reading ancient book: " + bookDatabase.getAncientBook(userId));
+            System.out.println("Reading ancient book: " + bookDatabase.getAncientBook(bookId));
         } else {
             System.out.println("Access denied to ancient book.");
         }
